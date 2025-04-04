@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMART LLC Transportation | Luxury Limousine & Taxi Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/apps/web/src/assets/styles/style.css">
+</head>
+<body>
+    <header class="animate__animated animate__fadeIn">
+        <div class="container">
+            <div class="logo">CMART LLC</div>
+            <div class="tagline">Premium Transportation Services</div>
+        </div>
+    </header>
+
+    <section class="hero animate__animated animate__fadeIn">
+        <div class="hero-content">
+            <h1>Luxury Transportation Done Right</h1>
+            <p>Experience comfort, style, and reliability with our premium fleet</p>
+            <div class="hero-buttons">
+                <a href="#book" class="btn">Book Now</a>
+                <a href="tel:+15046410004" class="btn btn-outline">Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="section-title animate__animated animate__fadeIn">Our Fleet</h2>
+        <div class="fleet">
+            <div class="vehicle-card animate__animated animate__fadeInLeft">
+                <img src="https://cars.usnews.com/static/images/Auto/izmo/i159616253/2024_chevrolet_suburban_angularfront.jpg" 
+                     alt="Chevrolet Suburban 2023" class="vehicle-img">
+                <div class="vehicle-info">
+                    <h3>Chevrolet Suburban 2023</h3>
+                    <p>Spacious luxury SUV with premium amenities for up to 8 passengers.</p>
+                    <ul>
+                        <li><i class="fas fa-user"></i> 8 Passengers</li>
+                        <li><i class="fas fa-suitcase"></i> 6 Large Bags</li>
+                        <li><i class="fas fa-wifi"></i> Free WiFi</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="vehicle-card animate__animated animate__fadeInRight">
+                <img src="https://65e81151f52e248c552b-fe74cd567ea2f1228f846834bd67571e.ssl.cf1.rackcdn.com/ldm-images/2020-Kia-Sedona-exterior-1.jpg" 
+                     alt="Kia Sedona 2020" class="vehicle-img">
+                <div class="vehicle-info">
+                    <h3>Kia Sedona 2020</h3>
+                    <p>Comfortable minivan perfect for family transportation or group travel.</p>
+                    <ul>
+                        <li><i class="fas fa-user"></i> 7 Passengers</li>
+                        <li><i class="fas fa-suitcase"></i> 4 Large Bags</li>
+                        <li><i class="fas fa-child"></i> Child Seats Available</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="book">
+        <div class="container">
+            <h2 class="section-title animate__animated animate__fadeIn">Book Your Ride</h2>
+            <div class="booking-form animate__animated animate__fadeInUp">
+                <form id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(504) 641-0004" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Vehicle Type</label>
+                            <select id="vehicle" name="vehicle" required>
+                                <option value="">Select a vehicle</option>
+                                <option value="Chevrolet Suburban 2023">Chevrolet Suburban 2023</option>
+                                <option value="Kia Sedona 2020">Kia Sedona 2020</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pickup_time">Pickup Date & Time</label>
+                        <input type="datetime-local" id="pickup_time" name="pickup_time" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pickup_location">Pickup Location</label>
+                            <input type="text" id="pickup_location" name="pickup_location" 
+                                   placeholder="123 Main St, Kenner, LA" required autocomplete="off">
+                            <div class="error-message" id="pickupError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="dropoff_location">Dropoff Location</label>
+                            <input type="text" id="dropoff_location" name="dropoff_location" 
+                                   placeholder="456 Elm St, New Orleans, LA" required autocomplete="off">
+                            <div class="error-message" id="dropoffError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special_requests">Special Requests (Optional)</label>
+                        <textarea id="special_requests" name="special_requests" rows="3"
+                            placeholder="Child seats, extra luggage, etc."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" id="submitBtn">
+                        <span id="buttonText">Confirm Booking</span>
+                        <i class="fas fa-spinner fa-spin" id="spinner" style="display: none;"></i>
+                    </button>
+
+                    <div id="responseMessage"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section animate__animated animate__fadeIn">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-card">
+                    <h3>Lamine Elghadhy</h3>
+                    <p style="text-align: center; margin-bottom: 20px;">Owner, CMART LLC Transportation</p>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+15026396216">+1 (502) 639-6216</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+15046410004">+1 (504) 641-0004</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:ouldm1969@gmail.com">ouldm1969@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:m11221969@hotmail.com">m11221969@hotmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            Kenner, LA 70065
+                        </li>
+                    </ul>
+                    <div class="call-now">
+                        <a href="tel:+15046410004" class="btn">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="map-card">
+                    <div class="map-container">
+                        <div id="map" style="height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>CMART LLC Transportation</h3>
+            <p class="footer-contact">Professional Service Since 2016</p>
+
+            <div class="footer-links">
+                <a href="#book">Book a Ride</a>
+                <a href="tel:+15046410004">Call Now</a>
+                <a href="mailto:ouldm1969@gmail.com">Email Us</a>
+            </div>
+
+            <div class="social-links">
+                <a href="tel:+15046410004" aria-label="Call us"><i class="fas fa-phone"></i></a>
+                <a href="mailto:ouldm1969@gmail.com" aria-label="Email us"><i class="fas fa-envelope"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p>&copy; 2025 CMART LLC. All rights reserved.<br>Kenner, LA 70065</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/apps/web/src/js/app.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBV4a94wRik5Mqpot-IJqVCPSvqayb1sos" async defer></script>
+</body>
+</html>
