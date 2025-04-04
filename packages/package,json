@@ -1,0 +1,15 @@
+{
+  "name": "@cmart/database",
+  "version": "1.0.0",
+  "description": "Shared database models for CMART Transportation",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "mongoose": "^8.0.0"
+  },
+  "peerDependencies": {
+    "mongodb": "^5.0.0"
+  }
+}
